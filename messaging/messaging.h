@@ -139,6 +139,8 @@ public:
   inline kj::ArrayPtr<const capnp::word> align(Message *m) {
     return align(m->getData(), m->getSize());
   }
+  // Manually specify destructor to workaround weird clang bug
+  ~AlignedBuffer() {}
 private:
   kj::Array<capnp::word> aligned_buf;
   size_t words_size;
