@@ -1,4 +1,5 @@
 import re
+import shutil
 import SCons
 from SCons.Action import Action
 from SCons.Scanner import Scanner
@@ -53,8 +54,16 @@ def create_builder(env):
 def cython_suffix_emitter(env, source):
   return "$CYTHONCFILESUFFIX"
 
+def get_cython_cmd():
+  for cmd in ["cythonize", "cython", "cython3"]:
+    if shutil.which(cmd):
+      return cmd
+
 def generate(env):
-  env["CYTHON"] = "cythonize"
+  #env["CYTHON"] = "cythonize"
+  # On ubuntu main host install
+  env["CYTHON"] = get_cython_cmd()
+  env["CYTHONFLAGS"] = "-3 --cplus"
   env["CYTHONCOM"] = "$CYTHON $CYTHONFLAGS $SOURCE"
   env["CYTHONCFILESUFFIX"] = ".cpp"
 
