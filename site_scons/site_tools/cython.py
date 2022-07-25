@@ -63,8 +63,11 @@ def generate(env):
   #env["CYTHON"] = "cythonize"
   # On ubuntu main host install
   env["CYTHON"] = get_cython_cmd()
-  #env["CYTHONFLAGS"] = "-3 --cplus"
-  env["CYTHONFLAGS"] = "-3"
+  if env["CYTHON"].startswith("cythonize"):
+    env["CYTHONFLAGS"] = "-3"
+  else:
+    env["CYTHONFLAGS"] = "-3 --cplus"
+  
   env["CYTHONCOM"] = "$CYTHON $CYTHONFLAGS $SOURCE"
   env["CYTHONCFILESUFFIX"] = ".cpp"
 
