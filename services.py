@@ -77,6 +77,7 @@ services = {
 
   # custom
   "headEncodeData": (True, 20),
+  "micData": (True, 50),
 }
 service_list = {name: Service(new_port(idx), *vals) for  # type: ignore
                 idx, (name, vals) in enumerate(services.items())}

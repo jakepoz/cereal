@@ -1812,6 +1812,17 @@ struct EncodeData {
   unixTimestampNanos @3 :UInt64;
 }
 
+struct AudioData {
+  mic @0: MicrophonePlacement;
+  channel @1: UInt32;
+  data @2: List(Float32);
+  unixTimestampNanos @3 :UInt64;
+
+  enum MicrophonePlacement {
+    mainBody @ 0;
+  }
+}
+
 struct Event {
   logMonoTime @0 :UInt64;  # nanoseconds
   valid @67 :Bool = true;
