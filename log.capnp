@@ -1889,6 +1889,9 @@ struct Event {
     navRoute @83 :NavRoute;
     navThumbnail @84: Thumbnail;
 
+    # custom
+    micData @93 :AudioData;
+
     # *********** debug ***********
     testJoystick @52 :Joystick;
     roadEncodeData @86 :EncodeData;
