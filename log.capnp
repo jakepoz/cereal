@@ -1823,6 +1823,18 @@ struct AudioData {
   }
 }
 
+struct ODriveFeedback {
+  struct ODriveMotorFeedback {
+    velCmd @0: Float32;
+    velActual @1: Float32;
+    posActual @2: Float32;
+    currentActual @3: Float32;
+  }
+
+  leftMotor @0: ODriveMotorFeedback;
+  rightMotor @1: ODriveMotorFeedback;
+}
+
 struct Event {
   logMonoTime @0 :UInt64;  # nanoseconds
   valid @67 :Bool = true;
@@ -1891,6 +1903,7 @@ struct Event {
 
     # custom
     micData @93 :AudioData;
+    odriveFeedback @94: ODriveFeedback;
 
     # *********** debug ***********
     testJoystick @52 :Joystick;
