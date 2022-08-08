@@ -1843,6 +1843,14 @@ struct Voltage {
   }
 }
 
+struct HeadFeedback {
+  pitchAngle @0: Float32;
+  yawAngle @1: Float32;
+
+  pitchMotorPower @2: Float32;
+  yawMotorPower @3: Float32;
+}
+
 struct Event {
   logMonoTime @0 :UInt64;  # nanoseconds
   valid @67 :Bool = true;
@@ -1913,6 +1921,7 @@ struct Event {
     micData @93 :AudioData;
     odriveFeedback @94: ODriveFeedback;
     voltage @95: Voltage;
+    headFeedback @96: HeadFeedback;
 
     # *********** debug ***********
     testJoystick @52 :Joystick;
