@@ -1825,14 +1825,22 @@ struct AudioData {
 
 struct ODriveFeedback {
   struct ODriveMotorFeedback {
-    velCmd @0: Float32;
-    velActual @1: Float32;
-    posActual @2: Float32;
-    currentActual @3: Float32;
+    vel @0: Float32;
+    pos @1: Float32;
+    current @2: Float32;
   }
 
   leftMotor @0: ODriveMotorFeedback;
   rightMotor @1: ODriveMotorFeedback;
+}
+
+struct Voltage {
+  type @0 : Type;
+  volts @1 : Float32;
+
+  enum Type {
+    mainBattery @ 0;
+  }
 }
 
 struct Event {
@@ -1904,6 +1912,7 @@ struct Event {
     # custom
     micData @93 :AudioData;
     odriveFeedback @94: ODriveFeedback;
+    voltage @95: Voltage;
 
     # *********** debug ***********
     testJoystick @52 :Joystick;
