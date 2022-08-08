@@ -79,6 +79,7 @@ services = {
   "headEncodeData": (True, 20),
   "micData": (True, 50),
   "odriveFeedback": (True, 10),
+  "simpleBGC": (True, 20),
 }
 service_list = {name: Service(new_port(idx), *vals) for  # type: ignore
                 idx, (name, vals) in enumerate(services.items())}
