@@ -1851,6 +1851,20 @@ struct HeadFeedback {
   yawMotorPower @3: Float32;
 }
 
+struct ModelValidation {
+  modelType @0 : ModelType;
+  modelFullName @1: String;
+  frameId @2 : Int32;
+
+  outputName: @3 String;
+  shape @4 : List[Int32];
+  data @5 : List[Float32];
+
+  enum ModelType {
+    visionIntermediate @ 0;
+  }
+}
+
 struct Event {
   logMonoTime @0 :UInt64;  # nanoseconds
   valid @67 :Bool = true;
