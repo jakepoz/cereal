@@ -1853,12 +1853,12 @@ struct HeadFeedback {
 
 struct ModelValidation {
   modelType @0 : ModelType;
-  modelFullName @1: String;
+  modelFullName @1: Text;
   frameId @2 : Int32;
 
-  outputName: @3 String;
-  shape @4 : List[Int32];
-  data @5 : List[Float32];
+  outputName @3: Text;
+  shape @4 : List(Int32);
+  data @5 : List(Float32);
 
   enum ModelType {
     visionIntermediate @ 0;
