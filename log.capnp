@@ -1860,6 +1860,8 @@ struct ModelValidation {
   shape @4 : List(Int32);
   data @5 : List(Float32);
 
+  serverValidated @6: Bool = false;
+
   enum ModelType {
     visionIntermediate @ 0;
   }
@@ -1936,6 +1938,7 @@ struct Event {
     odriveFeedback @94: ODriveFeedback;
     voltage @95: Voltage;
     headFeedback @96: HeadFeedback;
+    modelValidation @97: ModelValidation;
 
     # *********** debug ***********
     testJoystick @52 :Joystick;
