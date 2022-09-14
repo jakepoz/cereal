@@ -1856,7 +1856,7 @@ struct ModelValidation {
   modelFullName @1: Text;
   frameId @2 : Int32;
 
-  outputName @3: Text;
+  tensorName @3: Text;
   shape @4 : List(Int32);
   data @5 : List(Float32);
 
