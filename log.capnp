@@ -1864,6 +1864,7 @@ struct ModelValidation {
 
   enum ModelType {
     visionIntermediate @ 0;
+    visionInput @ 1;
   }
 }
 
