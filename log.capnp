@@ -1861,6 +1861,8 @@ struct ModelValidation {
   data @5 : List(Float32);
 
   serverValidated @6: Bool = false;
+  # Cosine similarity of host vs server tensor
+  serverSimilarity @7: Float32;
 
   enum ModelType {
     visionIntermediate @ 0;
