@@ -1860,13 +1860,20 @@ struct ModelValidation {
   shape @4 : List(Int32);
   data @5 : List(Float32);
 
-  serverValidated @6: Bool = false;
+  serverValidated @6: ValidationStatus = notValidated;
   # Cosine similarity of host vs server tensor
   serverSimilarity @7: Float32;
 
   enum ModelType {
     visionIntermediate @ 0;
     visionInput @ 1;
+  }
+
+  enum ValidationStatus {
+    notValidated @ 0;
+    validatedPassed @1;
+    validatedFailed @2;
+    validatedSkipped @3;
   }
 }
 
