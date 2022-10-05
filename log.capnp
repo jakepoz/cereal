@@ -1834,6 +1834,11 @@ struct ODriveFeedback {
   rightMotor @1: ODriveMotorFeedback;
 }
 
+struct ODriveCommand {
+  currentLeft @0: Float32;
+  currentRight @1: Float32;
+}
+
 struct Voltage {
   type @0 : Type;
   volts @1 : Float32;
@@ -1849,6 +1854,11 @@ struct HeadFeedback {
 
   pitchMotorPower @2: Float32;
   yawMotorPower @3: Float32;
+}
+
+struct HeadCommand {
+  pitchAngle @0: Float32;
+  yawAngle @1: Float32;
 }
 
 struct ModelValidation {
@@ -1949,6 +1959,8 @@ struct Event {
     voltage @95: Voltage;
     headFeedback @96: HeadFeedback;
     modelValidation @97: ModelValidation;
+    headCommand @98: HeadCommand;
+    odriveCommand @99: ODriveCommand;
 
     # *********** debug ***********
     testJoystick @52 :Joystick;
