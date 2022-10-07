@@ -1861,6 +1861,11 @@ struct HeadCommand {
   yawAngle @1: Float32;
 }
 
+struct ModelInference {
+  modelFullName @0: Text;
+  frameId @1 : Int32;
+}
+
 struct ModelValidation {
   modelType @0 : ModelType;
   modelFullName @1: Text;
@@ -1961,6 +1966,7 @@ struct Event {
     modelValidation @97: ModelValidation;
     headCommand @98: HeadCommand;
     odriveCommand @99: ODriveCommand;
+    modelInference @100: ModelInference;
 
     # *********** debug ***********
     testJoystick @52 :Joystick;
