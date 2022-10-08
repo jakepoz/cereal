@@ -1892,6 +1892,26 @@ struct ModelValidation {
   }
 }
 
+struct AppControl {
+  rewardState @0 : RewardState;
+  motionState @1 : MotionState;
+
+  linearXOverride @2 : Float32;
+  angularZOverride @3 : Float32;
+
+  enum RewardState {
+    noOverride @ 0;
+    overridePositive @1;
+    overrideNegative @2;
+  }
+
+  enum MotionState {
+    noOverride @ 0;
+    stopAllOutputs @ 1;
+    manualControl @2;
+  }
+}
+
 struct Event {
   logMonoTime @0 :UInt64;  # nanoseconds
   valid @67 :Bool = true;
@@ -1967,6 +1987,7 @@ struct Event {
     headCommand @98: HeadCommand;
     odriveCommand @99: ODriveCommand;
     modelInference @100: ModelInference;
+    appControl @101: AppControl;
 
     # *********** debug ***********
     testJoystick @52 :Joystick;
