@@ -1893,11 +1893,17 @@ struct ModelValidation {
 }
 
 struct AppControl {
-  rewardState @0 : RewardState;
-  motionState @1 : MotionState;
+  connectionState @0 : ConnectionState;
+  rewardState @1 : RewardState;
+  motionState @2 : MotionState;
 
-  linearXOverride @2 : Float32;
-  angularZOverride @3 : Float32;
+  linearXOverride @3 : Float32;
+  angularZOverride @4 : Float32;
+
+  enum ConnectionState {
+    notConnected @ 0;
+    connected @ 1;
+  }
 
   enum RewardState {
     noOverride @ 0;
