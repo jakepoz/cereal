@@ -1996,6 +1996,8 @@ struct Event {
     odriveCommand @99: ODriveCommand;
     modelInference @100: ModelInference;
     appControl @101: AppControl;
+    gyroscope @103: SensorEventData;
+    accelerometer @104: SensorEventData;
 
     # *********** debug ***********
     testJoystick @52 :Joystick;

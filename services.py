@@ -83,6 +83,8 @@ services = {
   "simpleBGC": (True, 20),
   "brainValidation": (True, 1),
   "appControl": (True, 1),
+  "gyroscope": (True, 200),
+  "accelerometer": (True, 200),
 }
 service_list = {name: Service(new_port(idx), *vals) for  # type: ignore
                 idx, (name, vals) in enumerate(services.items())}
