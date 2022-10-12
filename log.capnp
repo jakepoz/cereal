@@ -1985,6 +1985,8 @@ struct Event {
     navThumbnail @84: Thumbnail;
 
     # custom
+    headEncodeData @92 :EncodeData;
+    headCameraState @102: FrameData;
     micData @93 :AudioData;
     odriveFeedback @94: ODriveFeedback;
     voltage @95: Voltage;
@@ -2001,7 +2003,6 @@ struct Event {
     driverEncodeData @87 :EncodeData;
     wideRoadEncodeData @88 :EncodeData;
     qRoadEncodeData @89 :EncodeData;
-    headEncodeData @92 :EncodeData;
 
     # *********** legacy + deprecated ***********
     model @9 :Legacy.ModelData; # TODO: rename modelV2 and mark this as deprecated
