@@ -78,6 +78,8 @@ services = {
   # custom
   "headEncodeData": (True, 20),
   "headCameraState": (True, 20),
+  "depthEncodeData": (True, 20),
+  "depthCameraState": (True, 20),
   "micData": (True, 50),
   "odriveFeedback": (True, 10),
   "simpleBGC": (True, 20),

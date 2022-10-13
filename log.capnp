@@ -1987,6 +1987,8 @@ struct Event {
     # custom
     headEncodeData @92 :EncodeData;
     headCameraState @102: FrameData;
+    depthEncodeData @105: EncodeData;
+    depthCameraState @106: FrameData;
     micData @93 :AudioData;
     odriveFeedback @94: ODriveFeedback;
     voltage @95: Voltage;
