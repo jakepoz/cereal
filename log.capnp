@@ -1835,8 +1835,18 @@ struct ODriveFeedback {
 }
 
 struct ODriveCommand {
-  currentLeft @0: Float32;
-  currentRight @1: Float32;
+  controlMode @4: ControlMode;
+
+  desiredCurrentLeft @0: Float32;
+  desiredCurrentRight @1: Float32;
+
+  desiredVelocityLeft @2: Float32;
+  desiredVelocityRight @3: Float32;
+
+  enum ControlMode {
+    velocity @0;
+    current @1;
+  }
 }
 
 struct Voltage {
@@ -1915,6 +1925,7 @@ struct AppControl {
     noOverride @ 0;
     stopAllOutputs @ 1;
     manualControl @2;
+    suspendMajorMotion @3;
   }
 }
 
